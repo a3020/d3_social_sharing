@@ -1,0 +1,141 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: D3AttributeBlock\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-29 13:38+0100\n"
+"PO-Revision-Date: 2013-10-29 13:38+0100\n"
+"Last-Translator: Adri Kodde <adri@53gradennoord.nl>\n"
+"Language-Team: Adri Kodde\n"
+"Language: Dutch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.5.5\n"
+
+#: ..//blocks/d3_social_sharing/edit.php:2 ..//controller.php:2
+msgid "Access Denied."
+msgstr "Toegang geweigerd."
+
+#: ..//blocks/d3_social_sharing/edit.php:16
+msgid "Network"
+msgstr "Netwerk"
+
+#: ..//blocks/d3_social_sharing/edit.php:23
+msgid "Maximum width"
+msgstr "Maximale breedte"
+
+#: ..//blocks/d3_social_sharing/edit.php:32
+msgid "Icon Image"
+msgstr "Icoon afbeelding"
+
+#: ..//blocks/d3_social_sharing/edit.php:33
+msgid "Choose file"
+msgstr "Kies bestand"
+
+#: ..//blocks/d3_social_sharing/edit.php:39
+msgid "CSS Classes"
+msgstr "CSS classes"
+
+#: ..//blocks/d3_social_sharing/edit.php:45
+msgid "Show number of likes or tweets if available"
+msgstr "Toon aantal likes of tweets als die er zijn"
+
+#: ..//blocks/d3_social_sharing/view.php:23
+msgid "No valid icon image has been selected"
+msgstr "Er is geen geldige afbeelding geselecteerd"
+
+#: ..//blocks/d3_social_sharing/view.php:28
+msgid "No icon image has been selected"
+msgstr "Er is geen afbeelding geselecteerd"
+
+#: ..//controller.php:11
+msgid "Displays social sharing icons"
+msgstr "Toont social media icons"
+
+#: ..//controller.php:15
+msgid "Social Sharing"
+msgstr "Social Sharing"
+
+#~ msgid "Kies bestand"
+#~ msgstr "Kies bestand"
+
+#~ msgid "You have to create a file set first!"
+#~ msgstr "U dient eerst een bestandsverzameling aan te maken!"
+
+#~ msgid "Simple Slideshow based on bxslider"
+#~ msgstr "Eenvoudige slideshow gebaseerd op bxslider"
+
+#~ msgid "BX Slideshow"
+#~ msgstr "BX Slideshow"
+
+#~ msgid "Meant to wrap blocks in an HTML-element"
+#~ msgstr "Bedoeld om andere blokken of elementen te 'wraken'"
+
+#~ msgid "Block Wrapper"
+#~ msgstr "Block Wrapper"
+
+#~ msgid "Select template"
+#~ msgstr "Selecteer template"
+
+#~ msgid "Block Title (Optional)"
+#~ msgstr "Blok titel (optioneel)"
+
+#~ msgid "Extra HTML attribute"
+#~ msgstr "Extra HTML attribuut"
+
+#~ msgid "Link to page"
+#~ msgstr "Link naar pagina"
+
+#~ msgid "Close Wrapper"
+#~ msgstr "Sluit Blok"
+
+#~ msgid "Open Wrapper"
+#~ msgstr "Open Blok"
+
+#~ msgid ""
+#~ "Please select a custom template for this block to either open or close "
+#~ "the wrapper"
+#~ msgstr "Selecteer een template om het blok te openen of te sluiten"
+
+#~ msgid "Installs a block called 'Block Wrapper'"
+#~ msgstr "Installeert een blok genaamd 'Block Wrapper'"
+
+#~ msgid "No attributes have been selected for this page"
+#~ msgstr "Geen attributen zijn geselecteerd voor deze pagina"
+
+#~ msgid "A block that allows you to view and edit page attributes"
+#~ msgstr ""
+#~ "Een blok dat je in staat stelt pagina attributen te tonen en te bewerken"
+
+#~ msgid "Attribute Block"
+#~ msgstr "Attribute Block"
+
+#~ msgid "Insufficient access rights to perform this operation"
+#~ msgstr "Onvoldoende rechten om deze opdracht uit te voeren"
+
+#~ msgid ""
+#~ "Attribute couldn't be loaded. Please remove the block and add it again"
+#~ msgstr ""
+#~ "Het attribuut kon niet worden geladen. Verwijder het blok en voeg het "
+#~ "opnieuw toe"
+
+#~ msgid "Click to edit '%s'"
+#~ msgstr "Bewerk '%s'"
+
+#~ msgid ""
+#~ "Error: Attribute couldn't be loaded. Please remove the block and add it "
+#~ "again"
+#~ msgstr ""
+#~ "Foutmelding: Attribuut kon niet worden geladen. Verwijder het blok en "
+#~ "voeg het opnieuw toe"
+
+#~ msgid ""
+#~ "Error: You should choose another template to display images, files, etc."
+#~ msgstr ""
+#~ "Foutmelding: Kies een andere template om bijvoorbeeld afbeeldingen of "
+#~ "bestanden te tonen."
+
+#~ msgid "Installs a custom block to view and edit page attributes"
+#~ msgstr ""
+#~ "Installeert een nieuw blok type om pagina attributen te tonen en bewerken"

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<schema version="0.3">
+	<table name="btD3SocialSharing">
+		<field name="bID" type="I">
+			<key />
+			<unsigned />
+		</field>
+		<field name="fID" type="I"></field>
+		<field name="network" type="X"></field>
+		<field name="max_width" type="X"></field>
+		<field name="css_classes" type="X"></field>
+		<field name="show_likes" type="L">
+			<default value="1" />
+		</field>
+	</table>
+</schema>
