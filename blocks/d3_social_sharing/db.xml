@@ -12,5 +12,6 @@
 		<field name="show_likes" type="L">
 			<default value="1" />
 		</field>
+		<field name="tooltip" type="X"></field>
 	</table>
 </schema>

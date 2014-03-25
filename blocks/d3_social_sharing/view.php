@@ -9,19 +9,17 @@ if($this->controller->fID){
 		$icon = $ih->getThumbnail($file, (int)$this->controller->getMaxWidth(), 100, false);
 		$url = $this->controller->getNetworkURL();
 		
-		$likes = $this->controller->getNumberOfInteractions();
-		$likes = ($likes > 9999) ? $likes .'+' : $likes;
+		if ($this->controller->show_likes != 0) {
+			$likes = $this->controller->getNumberOfInteractions();
+			$likes = ($likes > 999) ? '1k+' : $likes;
+		}
 		
-		echo '<a title="'.$file->getDescription().'" class="d3-social-sharing-icon '.$this->controller->css_classes.'" target="'.$this->controller->getLinkTarget().'" href="'.$url.'">';
+		// title from img description: echo '<a title="'.$file->getDescription() ...
+		echo '<a title="'.$this->controller->tooltip.'" class="d3-social-sharing-icon '.$this->controller->css_classes.'" target="'.$this->controller->getLinkTarget().'" href="'.$url.'">';
 			echo '<img src="'.$icon->src.'" width="'.$icon->width.'" height="'.$icon->height.'" alt="'.$file->getDescription().'" />';
 			
-			if($this->controller->show_likes != 0){
-				$likes = $this->controller->getNumberOfInteractions();
-				$likes = ($likes > 9999) ? $likes .'+' : $likes;
-				
-				if($likes){
-					echo '<span class="likes">'.$likes.'</span>';
-				}
+			if($likes){
+				echo '<span class="likes">'.$likes.'</span>';
 			}
 			
 		echo '</a>';

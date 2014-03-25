@@ -42,6 +42,13 @@ $al   = Loader::helper('concrete/asset_library');
 </div>
 
 <div class="ccm-block-field-group">
+	<?php 
+	echo $form->label('tooltip', t('Tooltip'));
+	echo $form->text('tooltip', $this->controller->tooltip);
+	?>
+</div>
+
+<div class="ccm-block-field-group">
     <?php echo $form->label('show_likes', t('Show number of likes or tweets if available')); ?>
     
     <div class="input">

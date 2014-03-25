@@ -3,7 +3,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
     
 class D3SocialSharingBlockController extends BlockController {
     protected $btInterfaceWidth    = "470";
-    protected $btInterfaceHeight   = "260";
+    protected $btInterfaceHeight   = "300";
     
     protected $btTable = "btD3SocialSharing";
     protected $btCacheBlockRecord = true;
@@ -63,20 +63,20 @@ class D3SocialSharingBlockController extends BlockController {
 		
 		switch($this->network){
 			case 'Facebook':
-				// $request = "https://api.facebook.com/method/fql.query?query=".rawurlencode("select like_count, share_count from link_stat where url='".$page_url."'")."&format=json";
 				$request = "https://graph.facebook.com/fql?q=".rawurlencode("SELECT like_count, share_count, total_count FROM link_stat WHERE url='".$page_url."'");
-				$json = json_decode(file_get_contents($request), true); 
+				$json = json_decode(file_get_contents($request), true);
 				
-				if($json && isset($json['share_count'])){
-					return $json['share_count'];
+				// total_count = like_cont + share_count - change the code if you need
+				if($json && isset($json['data'][0]['total_count'])){
+					return $json['data'][0]['total_count'];
 				}
 			break;
 			case 'Twitter':
 				$request = "http://urls.api.twitter.com/1/urls/count.json?url=".urlencode($page_url);
 				$json = json_decode(file_get_contents($request), true); 
 				
-				if($json && isset($json->count)){
-					return $json->count;
+				if($json && isset($json[count])){
+					return $json[count];
 				}
 			break;				
 		}
@@ -118,7 +118,9 @@ class D3SocialSharingBlockController extends BlockController {
 				$url = 'http://www.linkedin.com/shareArticle?mini=true&amp;url='.$page_url;
 			break;
 			case 'Pinterest':
-				$url = "http://pinterest.com/pin/create/link/?url=".$page_url;
+				// need to provide a valid URL to an image - if not provided the Pinterest link will not work
+				// this should be implemented via a custom page attribute
+				$url = "http://pinterest.com/pin/create/link/?url=".$page_url."&amp;media=";
 			break;
 			case 'Email':
 				$url = 'mailto:?Subject='.$share_text.'&Body='.$page_url;
@@ -139,7 +141,7 @@ class D3SocialSharingBlockController extends BlockController {
 				return '_self';
 			break;
 			case 'Pinterest':
-				return '_blank';
+				return '_self';
 			break;
 			default: 
 				return '_blank';
