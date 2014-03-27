@@ -119,8 +119,16 @@ class D3SocialSharingBlockController extends BlockController {
 			break;
 			case 'Pinterest':
 				// need to provide a valid URL to an image - if not provided the Pinterest link will not work
-				// this should be implemented via a custom page attribute
-				$url = "http://pinterest.com/pin/create/link/?url=".$page_url."&amp;media=";
+				// this should be implemented via a custom page attribute or set a default image 
+				$hostUrl = 'http://'.$_SERVER['HTTP_HOST'];
+				$v         = View::getInstance();
+				$themePath = $v->getThemePath();
+				if ($page->getAttribute('pinterest_img')) {
+					$urlPinterestImg = $hostUrl . $page->getAttribute('pinterest_img')->getVersion()->getRelativePath();
+				} else {
+					$urlPinterestImg = $hostUrl.$themePath."/img/jakisport-agencija-pinterest.jpg";
+				}
+				$url = "http://pinterest.com/pin/create/link/?url=".$page_url."&amp;media=".$urlPinterestImg."&amp;description=".$share_text;
 			break;
 			case 'Email':
 				$url = 'mailto:?Subject='.$share_text.'&Body='.$page_url;
@@ -141,7 +149,7 @@ class D3SocialSharingBlockController extends BlockController {
 				return '_self';
 			break;
 			case 'Pinterest':
-				return '_self';
+				return '_blank';
 			break;
 			default: 
 				return '_blank';
