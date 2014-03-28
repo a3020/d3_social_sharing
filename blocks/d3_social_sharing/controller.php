@@ -73,7 +73,18 @@ class D3SocialSharingBlockController extends BlockController {
 			break;
 			case 'Twitter':
 				$request = "http://urls.api.twitter.com/1/urls/count.json?url=".urlencode($page_url);
-				$json = json_decode(file_get_contents($request), true); 
+				$json = json_decode(file_get_contents($request), true);
+				
+				if($json && isset($json[count])){
+					return $json[count];
+				}
+			break;				
+			case 'Pinterest':
+				$request = "http://api.pinterest.com/v1/urls/count.json?url=".urlencode($page_url);
+				$json = file_get_contents($request);
+				// Pinterest doesn't return the correct json format. It has to be parsed befor use
+				$json = preg_replace('/^receiveCount\((.*)\)$/', "\\1", $json);
+				$json = json_decode($json, true);
 				
 				if($json && isset($json[count])){
 					return $json[count];
@@ -128,7 +139,8 @@ class D3SocialSharingBlockController extends BlockController {
 				} else {
 					$urlPinterestImg = $hostUrl.$themePath."/img/jakisport-agencija-pinterest.jpg";
 				}
-				$url = "http://pinterest.com/pin/create/link/?url=".$page_url."&amp;media=".$urlPinterestImg."&amp;description=".$share_text;
+				$url = "//gb.pinterest.com/pin/create/button/?url=".urlencode($page_url)."&amp;media=".urlencode($urlPinterestImg)."&amp;
+						description=".urlencode($share_text);
 			break;
 			case 'Email':
 				$url = 'mailto:?Subject='.$share_text.'&Body='.$page_url;
