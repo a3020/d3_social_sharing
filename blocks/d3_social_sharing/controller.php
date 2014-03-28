@@ -75,10 +75,21 @@ class D3SocialSharingBlockController extends BlockController {
 				$request = "http://urls.api.twitter.com/1/urls/count.json?url=".urlencode($page_url);
 				$json = json_decode(file_get_contents($request), true); 
 				
+				if($json && isset($json['count'])){
+					return $json['count'];
+				}
+			break;
+			case 'Pinterest':
+				$request = "http://api.pinterest.com/v1/urls/count.json?url=".urlencode($page_url);
+				$json = file_get_contents($request);
+				// Pinterest doesn't return the correct json format. It has to be parsed befor use
+				$json = preg_replace('/^receiveCount\((.*)\)$/', "\\1", $json);
+				$json = json_decode($json, true);
+
 				if($json && isset($json[count])){
 					return $json[count];
 				}
-			break;				
+			break;
 		}
 		
 		return false;
@@ -118,9 +129,16 @@ class D3SocialSharingBlockController extends BlockController {
 				$url = 'http://www.linkedin.com/shareArticle?mini=true&amp;url='.$page_url;
 			break;
 			case 'Pinterest':
-				// need to provide a valid URL to an image - if not provided the Pinterest link will not work
-				// this should be implemented via a custom page attribute
-				$url = "http://pinterest.com/pin/create/link/?url=".$page_url."&amp;media=";
+				$pinterest_image = $page->getAttribute('d3_ss_pinterest_image');
+				$url = false;
+				
+				if($pinterest_image){
+					// need to provide a valid URL to an image - if not provided sharing with Pinterest won't work
+					if($pinterest_image){
+						$urlPinterestImg = BASE_URL . $pinterest_image->getVersion()->getRelativePath();
+						$url = "//gb.pinterest.com/pin/create/button/?url=".urlencode($page_url)."&amp;media=".urlencode($urlPinterestImg)."&amp;description=".urlencode($share_text);
+					}				
+				}
 			break;
 			case 'Email':
 				$url = 'mailto:?Subject='.$share_text.'&Body='.$page_url;
@@ -141,7 +159,7 @@ class D3SocialSharingBlockController extends BlockController {
 				return '_self';
 			break;
 			case 'Pinterest':
-				return '_self';
+				return '_blank';
 			break;
 			default: 
 				return '_blank';

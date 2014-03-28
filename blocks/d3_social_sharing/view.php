@@ -14,11 +14,14 @@ if($this->controller->fID){
 			$likes = ($likes > 999) ? '1k+' : $likes;
 		}
 		
-		// title from img description: echo '<a title="'.$file->getDescription() ...
+		if(!$url){
+			return false;
+		}
+		
 		echo '<a title="'.$this->controller->tooltip.'" class="d3-social-sharing-icon '.$this->controller->css_classes.'" target="'.$this->controller->getLinkTarget().'" href="'.$url.'">';
 			echo '<img src="'.$icon->src.'" width="'.$icon->width.'" height="'.$icon->height.'" alt="'.$file->getDescription().'" />';
 			
-			if($likes){
+			if(isset($likes)){
 				echo '<span class="likes">'.$likes.'</span>';
 			}
 			
