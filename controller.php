@@ -10,7 +10,7 @@ class D3SocialSharingPackage extends Package {
 
 	protected $pkgHandle = 'd3_social_sharing';
 	protected $appVersionRequired = '5.6.0.2';
-	protected $pkgVersion = '1.4';
+	protected $pkgVersion = '1.4.1';
 
 	public function getPackageDescription() {
 		return t('Displays social sharing icons');
