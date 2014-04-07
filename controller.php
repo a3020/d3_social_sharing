@@ -1,5 +1,5 @@
 <?php  
-defined('C5_EXECUTE') or die(_("Access Denied."));
+defined('C5_EXECUTE') or die("Access Denied.");
 
 /**
  * Social Sharing add-on.
@@ -10,7 +10,7 @@ class D3SocialSharingPackage extends Package {
 
 	protected $pkgHandle = 'd3_social_sharing';
 	protected $appVersionRequired = '5.6.0.2';
-	protected $pkgVersion = '1.4.2';
+	protected $pkgVersion = '1.4.3';
 
 	public function getPackageDescription() {
 		return t('Displays social sharing icons');

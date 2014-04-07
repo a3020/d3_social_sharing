@@ -1,61 +1,67 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: D3AttributeBlock\n"
+"Project-Id-Version: d3_social_sharing 1.4.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-29 13:38+0100\n"
-"PO-Revision-Date: 2013-10-29 13:38+0100\n"
-"Last-Translator: Adri Kodde <adri@53gradennoord.nl>\n"
+"POT-Creation-Date: 2014-04-07 08:39+0000\n"
+"PO-Revision-Date: 2014-04-07 10:39+0100\n"
+"Last-Translator: Adri Kodde <mail@adrikodde.nl>\n"
 "Language-Team: Adri Kodde\n"
-"Language: Dutch\n"
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: ../../../../..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"X-Language: nl_NL\n"
 "X-Generator: Poedit 1.5.5\n"
 
-#: ..//blocks/d3_social_sharing/edit.php:2 ..//controller.php:2
-msgid "Access Denied."
-msgstr "Toegang geweigerd."
-
-#: ..//blocks/d3_social_sharing/edit.php:16
+#: packages/d3_social_sharing/blocks/d3_social_sharing/edit.php:16
 msgid "Network"
 msgstr "Netwerk"
 
-#: ..//blocks/d3_social_sharing/edit.php:23
+#: packages/d3_social_sharing/blocks/d3_social_sharing/edit.php:23
 msgid "Maximum width"
 msgstr "Maximale breedte"
 
-#: ..//blocks/d3_social_sharing/edit.php:32
+#: packages/d3_social_sharing/blocks/d3_social_sharing/edit.php:32
 msgid "Icon Image"
 msgstr "Icoon afbeelding"
 
-#: ..//blocks/d3_social_sharing/edit.php:33
+#: packages/d3_social_sharing/blocks/d3_social_sharing/edit.php:33
 msgid "Choose file"
 msgstr "Kies bestand"
 
-#: ..//blocks/d3_social_sharing/edit.php:39
+#: packages/d3_social_sharing/blocks/d3_social_sharing/edit.php:39
 msgid "CSS Classes"
 msgstr "CSS classes"
 
-#: ..//blocks/d3_social_sharing/edit.php:45
+#: packages/d3_social_sharing/blocks/d3_social_sharing/edit.php:46
+msgid "Tooltip"
+msgstr "Tooltip"
+
+#: packages/d3_social_sharing/blocks/d3_social_sharing/edit.php:52
 msgid "Show number of likes or tweets if available"
 msgstr "Toon aantal likes of tweets als die er zijn"
 
-#: ..//blocks/d3_social_sharing/view.php:23
+#: packages/d3_social_sharing/blocks/d3_social_sharing/view.php:30
 msgid "No valid icon image has been selected"
 msgstr "Er is geen geldige afbeelding geselecteerd"
 
-#: ..//blocks/d3_social_sharing/view.php:28
+#: packages/d3_social_sharing/blocks/d3_social_sharing/view.php:35
 msgid "No icon image has been selected"
 msgstr "Er is geen afbeelding geselecteerd"
 
-#: ..//controller.php:11
+#: packages/d3_social_sharing/controller.php:16
 msgid "Displays social sharing icons"
 msgstr "Toont social media icons"
 
-#: ..//controller.php:15
+#: packages/d3_social_sharing/controller.php:20
 msgid "Social Sharing"
 msgstr "Social Sharing"
+
+#~ msgid "Access Denied."
+#~ msgstr "Toegang geweigerd."
 
 #~ msgid "Kies bestand"
 #~ msgstr "Kies bestand"
