@@ -28,33 +28,35 @@ class D3SocialSharingBlockController extends BlockController {
     }
     
     
-    /*
-        Default values when block is being added
-    */
+    /**
+     * Set default values for 'Add'-dialog.
+     */
 	public function add(){
 		$this->max_width = $this->default_max_width;
 	}
     
-    
-    /*
-        Images will be cropped if they exceed the maximum width
-    */
+
+	/**
+	 * @return integer Max pixel width of an icon.
+	 */
 	public function getMaxWidth(){
 		return (!$this->max_width OR $this->max_width == 0) ? $this->default_max_width : $this->max_width;
 	}
 	
 	
-	/*
-	   This function can be overridden easily if you want to add more networks
-	*/
+	/**
+	 * @return networks[] Array with social network names.
+	 */
 	public function getNetworks(){
 	    return $this->networks;
 	}
 	
 	
-	/*
-		Returns integer with number of likes, shares or tweets
-	*/
+	/**
+	 * Returns the number of tweets or likes.
+	 *
+	 * @return integer | boolean Number of tweets / likes. Return false if not available.
+	 */
 	public function getNumberOfInteractions(){
 		$nh = Loader::helper('navigation');
 		
@@ -86,8 +88,8 @@ class D3SocialSharingBlockController extends BlockController {
 				$json = preg_replace('/^receiveCount\((.*)\)$/', "\\1", $json);
 				$json = json_decode($json, true);
 
-				if($json && isset($json[count])){
-					return $json[count];
+				if($json && isset($json['count'])){
+					return $json['count'];
 				}
 			break;
 		}
@@ -96,9 +98,11 @@ class D3SocialSharingBlockController extends BlockController {
 	}
 	
 	
-	/*
-	   Each social network has its own sharing URL
-	*/
+	/**
+	 * Returns sharing URL.
+	 *
+	 * @return string Sharing URL for the social network.
+	 */
 	public function getNetworkURL(){
 		$nh = Loader::helper('navigation');
 		
@@ -149,10 +153,13 @@ class D3SocialSharingBlockController extends BlockController {
 	}
 	
 	
-	/*
-	   By default, links open in a new window.
-	   For some networks, this is not ideal (e.g. email and Pinterest)
-	*/
+	/**
+	 * Returns target for an URL.
+	 *
+	 * By default links will be opened in a new window.
+	 *
+	 * @return string (_self | _blank)
+	 */
 	public function getLinkTarget(){
 		switch($this->network){
 			case 'Email':
