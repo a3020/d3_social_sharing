@@ -4,7 +4,6 @@ defined('C5_EXECUTE') or die("Access Denied.");
 /**
  * Social Sharing add-on.
  * 
- * @author Adri Kodde
  */
 class D3SocialSharingPackage extends Package {
 
